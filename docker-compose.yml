@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+    client:
+      build:
+        context: ./
+        target: shogun_development
+      volumes:
+        - ./:/usr/src/client:rw,cached
+      ports:
+        - target: 9009
+          published: 8080
+          protocol: tcp
+volumes:
+  db-data: {}
+  dev-certs: {}
